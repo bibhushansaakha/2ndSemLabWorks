@@ -11,7 +11,6 @@
 #include<iostream>
 
 using namespace std;
- 
 
 class Complex
 {
@@ -79,9 +78,9 @@ public:
         return false;
     }
 
-    bool operator >=(Complex c)
+    bool operator >(Complex c)
     {
-        if (x>=c.x && y>=c.y)
+        if (x>c.x && y>c.y)
         {
             return true;
         }
@@ -149,7 +148,7 @@ int main()
     cout<<"\t"<<(c1==c2)<<" and "<<(c1==c1)<<endl;
 
     cout<<"\nUsing greater than operator: \n";
-    cout<<"\t"<<(c1>=c2);
+    cout<<"\t"<<(c1>c2);
 
     cout<<"\nUsing != not equal to operator: \n";
     cout<<"\t"<<(c1!=c2)<<" and "<<(c1!=c1)<<endl;

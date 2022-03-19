@@ -18,7 +18,11 @@ public:
     double side_one, side_two;
     Shape():side_one(0),side_two(0){}
     Shape(double l,double b):side_one(l),side_two(b){}
-    void set_Data(double,double);
+    void set_Data(double l,double b)
+    {
+        side_one=l;
+        side_two=b;
+    }
     virtual void display_area();
 };
 
@@ -37,7 +41,7 @@ public:
         double area=pow((s*(s-side_one)*(s-side_two)*(s-side_three)),0.5);
         if (area==0)
         {
-            cout<<"Invalid Input. The lengths of any two sides of a triangle must add up to more than the length of the third side.";
+            cout<<"\nInvalid Input. The lengths of any two sides of a triangle must add up to more than the length of the third side.";
         }
         else
         {
@@ -58,7 +62,7 @@ public:
 
 int main()
 {
-    int user;
+    int user,l,b;
     Rectangle rect;
     Triangle tip;
     while (user!=0)
@@ -68,20 +72,22 @@ int main()
         if (user==1)
         {
             cout<<"\nEnter side one of the Triangle:\t";
-            cin>>tip.side_one;
+            cin>>l;
             cout<<"\nEnter side two of the Triangle:\t";
-            cin>>tip.side_two;
+            cin>>b;
             cout<<"\nEnter side three of the Triangle:\t";
             cin>>tip.side_three;
+            tip.set_Data(l,b);
             tip.display_area();
         }
 
         else if (user==2)
         {
             cout<<"\nEnter side one of the Rectangle:\t";
-            cin>>rect.side_one;
+            cin>>l;
             cout<<"\nEnter side two of the Rectangle:\t";
-            cin>>rect.side_two;
+            cin>>b;
+            rect.set_Data(l,b);
             rect.display_area();
         }
 

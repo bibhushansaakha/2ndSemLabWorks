@@ -33,8 +33,8 @@ public:
     double side_three;
     void display_area()
     {
-        double s=side_one+side_two+side_three;
-        double area=pow(s*(s-side_one)*(s-side_two)*(s-side_three),1/2);
+        double s=(side_one+side_two+side_three)/2;
+        double area=pow((s*(s-side_one)*(s-side_two)*(s-side_three)),1/2);
         cout<<"\nArea of the Triangle is:\t"<<area;
     }
 };
@@ -51,10 +51,12 @@ public:
 
 int main()
 {
-    Shape Polygon;
-    cout<<"\nEnter side one of the Polygon:\t";
-    cin>>Polygon.side_one;
-    cout<<"\nEnter side two of the Polygon:\t";
-    cin>>Polygon.side_two;
-    cout<<"\nEnter side three of the Polygon:\t";
+    Triangle tip;
+    cout<<"\nEnter side one of the Triangle:\t";
+    cin>>tip.side_one;
+    cout<<"\nEnter side two of the Triangle:\t";
+    cin>>tip.side_two;
+    cout<<"\nEnter side three of the Triangle:\t";
+    cin>>tip.side_three;
+    tip.display_area();
 }

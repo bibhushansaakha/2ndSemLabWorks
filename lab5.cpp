@@ -1,5 +1,5 @@
 /**
- * @file lab4.cpp
+ * @file lab5.cpp
  * @author Bibhushan Saakha
  * @brief overload operators 
  * @version 0.1

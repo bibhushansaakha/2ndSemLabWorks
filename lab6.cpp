@@ -23,13 +23,8 @@ public:
         side_one=l;
         side_two=b;
     }
-    virtual void display_area();
+    virtual void display_area()=0;
 };
-
-void Shape::display_area()
-{
-    cout<<"The Area of the Shape is:\t";
-}
 
 class Triangle : public Shape
 {
@@ -63,14 +58,14 @@ public:
 int main()
 {
     int user,l,b;
-    Rectangle rect;
-    Triangle tip;
+    Shape *p;
     while (user!=0)
     {
         cout<<"\n\nDo you want to find the area of Triangle(1) or a Rectangle(2) or Quit(0)?\n";
         cin>>user;
         if (user==1)
         {
+            Triangle tip;
             cout<<"\nEnter side one of the Triangle:\t";
             cin>>l;
             cout<<"\nEnter side two of the Triangle:\t";
@@ -78,28 +73,33 @@ int main()
             cout<<"\nEnter side three of the Triangle:\t";
             cin>>tip.side_three;
             tip.set_Data(l,b);
-            tip.display_area();
+            p = &tip;
         }
 
         else if (user==2)
         {
+            Rectangle rect;
             cout<<"\nEnter side one of the Rectangle:\t";
             cin>>l;
             cout<<"\nEnter side two of the Rectangle:\t";
             cin>>b;
             rect.set_Data(l,b);
-            rect.display_area();
+            p = &rect;
         }
 
         else if (user==0)
         {
             cout<<"\nThankyou for using this program!!!\n\n";
+            break;
         }
         
         else
         {
             cout<<"\nInvalid input\n";
+            break;
         }
+        
+        p->display_area();
     }
           
 }

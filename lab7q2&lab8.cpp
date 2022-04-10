@@ -1,7 +1,7 @@
 /**
  * @file lab7q2&lab8.cpp
  * @author Bibhushan Saakha
- * @brief sort numbers in an array
+ * @brief sort numbers in an array and use exception handling
  * @version 0.1
  * @date 2022-04-04
  * 
